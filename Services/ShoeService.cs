@@ -2,7 +2,7 @@
 
 namespace ShoeInventoryApp.Services
 {
-    public class ShoeService : IShoeService  // 
+    public class ShoeService : IShoeService  // test
     {
         private readonly AppDbContext _context;
 
