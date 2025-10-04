@@ -1,0 +1,71 @@
+/* Team PRAW Original Theme (PF_PROJ1_BSIT31A1_SHOESHOP_TEAMPRAW)
+   Distinct palette and components for originality. */
+:root {
+  --primary: #4b2e83;   /* purple */
+  --primary-2: #6c46b2; /* lighter purple */
+  --accent: #00c2ff;    /* cyan */
+  --accent-2: #00a2d6;  /* deeper cyan */
+  --bg: #0f1226;        /* deep navy */
+  --card: #171a33;      /* card surface */
+  --text: #e9ecff;      /* near white */
+  --muted: #a8b1ff;     /* muted text */
+  --success: #16c79a;
+  --warning: #ffb020;
+  --danger:  #ff4757;
+  --radius: 14px;
+  --shadow: 0 12px 30px rgba(0,0,0,0.35);
+  --transition: all .25s ease;
+}
+
+html, body {
+  background: radial-gradient(1200px 800px at 20% -10%, rgba(75,46,131,.35) 0%, transparent 40%),
+              radial-gradient(900px 600px at 120% 20%, rgba(0,162,214,.25) 0%, transparent 45%),
+              var(--bg);
+  color: var(--text);
+}
+
+.navbar {
+  background: linear-gradient(135deg, rgba(75,46,131,.9), rgba(0,162,214,.9));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.navbar-brand { font-weight: 800; letter-spacing: .3px; color: #fff !important; }
+.nav-link { color: rgba(255,255,255,.85) !important; font-weight: 600; border-radius: 10px; }
+.nav-link:hover { background: rgba(255,255,255,.08); color: #fff !important; transform: translateY(-1px); }
+
+.hero-section {
+  background: linear-gradient(180deg, rgba(108,70,178,.35), rgba(0,194,255,.15));
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow);
+}
+.hero-title { font-size: 3.2rem; font-weight: 900; letter-spacing: .5px; }
+.hero-subtitle { color: var(--muted); }
+
+.card { background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow); }
+.card-header { background: linear-gradient(90deg, transparent, rgba(0,194,255,.15)); border-bottom: 1px solid rgba(255,255,255,.06); font-weight: 700; color: var(--text); }
+.card:hover { transform: translateY(-3px); }
+
+.btn { border-radius: 12px; border: none; font-weight: 700; letter-spacing: .3px; }
+.btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-2)); box-shadow: 0 8px 18px rgba(75,46,131,.35); }
+.btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.btn-warning { background: linear-gradient(135deg, var(--warning), #e38b06); color: #1b1b1b; }
+
+.badge { border-radius: 10px; padding: .35rem .6rem; font-weight: 700; }
+.badge-primary { background: var(--primary-2); }
+.badge-danger  { background: var(--danger); }
+
+.table { color: var(--text); }
+.table thead th { background: rgba(255,255,255,.06); border: none; }
+.table tbody tr:hover { background: rgba(255,255,255,.04); }
+
+.action-item { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06); color: var(--text); }
+.action-item:hover { background: rgba(0,194,255,.12); color: #fff; }
+.action-icon { color: var(--accent); }
+
+.footer { background: linear-gradient(180deg, rgba(75,46,131,.6), rgba(15,18,38,1)); border-top: 1px solid rgba(255,255,255,.08); }
+.footer a { color: var(--accent); }
+
+/* micro animations */
+.fade-in-up { animation: tp-fade-in-up .5s ease-out; }
+@keyframes tp-fade-in-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
