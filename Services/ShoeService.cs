@@ -1,8 +1,8 @@
 ﻿using ShoeInventoryApp.Models;
 
-namespace ShoeInventoryApp.Services
+namespace ShoeInventoryApp.Services //
 {
-    public class ShoeService : IShoeService  // test
+    public class ShoeService : IShoeService  //
     {
         private readonly AppDbContext _context;
 
