@@ -1,6 +1,49 @@
-﻿namespace ShoeInventoryApp.Views.ShoeColorVariation
-{
-    public class Create
-    {
+﻿@model ShoeInventoryApp.Models.ShoeColorVariation
+
+@{
+    ViewData["Title"] = "Add Color Variation";
+}
+
+<div class="container mt-5 text-light" style="max-width: 600px;">
+    <h2 class="fw-bold text-center mb-4"
+        style="background: linear-gradient(to right, #4a148c, #0d47a1);
+               -webkit-background-clip: text; color: transparent;">
+        Add New Color Variation
+    </h2>
+
+    <form asp-action="Create" method="post" class="bg-dark p-4 rounded-4 shadow-sm">
+        <div class="mb-3">
+            <label asp-for="Color" class="form-label fw-semibold">Color Name</label>
+            <input asp-for="Color" class="form-control" placeholder="e.g., Red, Black, White" />
+            <span asp-validation-for="Color" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Stock" class="form-label fw-semibold">Stock Quantity</label>
+            <input asp-for="Stock" class="form-control" type="number" placeholder="Enter stock count" />
+            <span asp-validation-for="Stock" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ShoeId" class="form-label fw-semibold">Select Shoe</label>
+            <select asp-for="ShoeId" asp-items="ViewBag.ShoeList" class="form-select">
+                <option value="">-- Select a Shoe --</option>
+            </select>
+            <span asp-validation-for="ShoeId" class="text-danger"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary px-5"
+                    style="background-color: #1565c0; border-color: #1565c0;">
+                Save
+            </button>
+            <a asp-action="Index" class="btn btn-outline-light ms-2 px-4">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }

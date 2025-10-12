@@ -1,6 +1,49 @@
-﻿namespace ShoeInventoryApp.Views.ShoeColorVariation
-{
-    public class Index
-    {
-    }
+﻿@model IEnumerable<ShoeInventoryApp.Models.ShoeColorVariation>
+
+@{
+    ViewData["Title"] = "Color Variations";
 }
+
+<div class="container mt-5 text-light" style="max-width: 1000px;">
+    <h2 class="fw-bold text-center mb-4"
+        style="background: linear-gradient(to right, #4a148c, #0d47a1);
+               -webkit-background-clip: text; color: transparent;">
+        Shoe Color Variations
+    </h2>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a asp-action="Create" class="btn btn-primary px-4 shadow-sm"
+           style="background-color: #1565c0; border-color: #1565c0;">
+            + Add Color Variation
+        </a>
+    </div>
+
+    <table class="table table-dark table-hover rounded-3 overflow-hidden shadow-sm">
+        <thead class="bg-gradient" style="background: linear-gradient(to right, #1a237e, #0d47a1);">
+            <tr>
+                <th>Color</th>
+                <th>Stock</th>
+                <th>Shoe</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Color</td>
+                    <td>@item.Stock</td>
+                    <td>@item.Shoe?.Name</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning text-dark">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="Index" asp-controller="Shoes" class="btn btn-outline-light mt-3">
+        ← Back to Shoes
+    </a>
+</div>
