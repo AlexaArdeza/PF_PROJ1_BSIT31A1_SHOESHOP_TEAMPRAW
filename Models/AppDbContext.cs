@@ -9,7 +9,7 @@ namespace ShoeInventoryApp.Models
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
 
-        // Constructor that takes DbContextOptions
+        
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
